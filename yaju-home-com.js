@@ -165,9 +165,10 @@ icons.forEach((img) => {
   let vibeId = null;
 
   // 親要素（.card や .card-link）にホバーした時に発動
-  const parentCard = img.closest('.card-link') || img.closest('.card');
+  //const parentCard = true;
+  //img.closest('.card-link') || img.closest('.card');
 
-  parentCard.addEventListener('mouseenter', () => {
+  //parentCard.addEventListener('mouseenter', () => {
     const loop = () => {
       // 0.7 〜 1.3 の範囲で毎フレーム完全にランダムな縦横比を生成
       const scaleX = (0.7 + Math.random() * 0.6).toFixed(2);
@@ -179,7 +180,7 @@ icons.forEach((img) => {
       vibeId = requestAnimationFrame(loop);
     };
     loop();
-  });
+  //});
 
   parentCard.addEventListener('mouseleave', () => {
     if (vibeId) cancelAnimationFrame(vibeId);
